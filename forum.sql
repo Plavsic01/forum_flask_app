@@ -23,14 +23,14 @@ DROP TABLE IF EXISTS `objave`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `objave` (
-  `id_objava` int NOT NULL,
+  `id_objava` int NOT NULL AUTO_INCREMENT,
   `naslov` varchar(45) NOT NULL,
   `opis` text NOT NULL,
   `useri_user_name` varchar(20) NOT NULL,
   PRIMARY KEY (`id_objava`),
   KEY `fk_objave_useri_idx` (`useri_user_name`),
   CONSTRAINT `fk_objave_useri` FOREIGN KEY (`useri_user_name`) REFERENCES `useri` (`user_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,7 @@ CREATE TABLE `objave` (
 
 LOCK TABLES `objave` WRITE;
 /*!40000 ALTER TABLE `objave` DISABLE KEYS */;
+INSERT INTO `objave` VALUES (8,'prva objava edit editova',' bas sam glup lmao salim se nisam','Vanja');
 /*!40000 ALTER TABLE `objave` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,6 +62,7 @@ CREATE TABLE `useri` (
 
 LOCK TABLES `useri` WRITE;
 /*!40000 ALTER TABLE `useri` DISABLE KEYS */;
+INSERT INTO `useri` VALUES ('andrej'),('gas_geben'),('miki_milan'),('Vanja'),('vanjonz');
 /*!40000 ALTER TABLE `useri` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -73,4 +75,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-23 18:24:54
+-- Dump completed on 2022-03-23 21:11:08
